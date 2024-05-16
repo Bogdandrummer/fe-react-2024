@@ -10,8 +10,9 @@ export const ProductCard = (props: Product) => (
             <h3 className={styles.card__title}>{props.title}</h3>
             <div className={styles.card__price}>
                 {props.price}
-                <span className={styles.symbol}>₴</span>
-                <Basket className={styles.basket} />
+                <span className={styles.symbol}>
+                    ₴ <Basket className={styles.basket} />
+                </span>
             </div>
         </div>
     </>

@@ -1,5 +1,6 @@
 .product__card {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 275px;
   height: 345px;
@@ -19,6 +20,10 @@
 }
 
 .card__title {
+  display: flex;
+  overflow: hidden;
+  height: 50px;
+  width: 100%;
   font-size: 22px;
   font-weight: 600;
   line-height: 25px;
@@ -29,7 +34,11 @@
 
 .card__price {
   display: flex;
-  position: relative;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  padding: 0 15px;
+  z-index: 2;
   width: 100%;
   align-items: baseline;
   font-size: 24px;
@@ -47,7 +56,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
   margin: auto 0;
+  right: 15px;
   stroke: #111;
 }
