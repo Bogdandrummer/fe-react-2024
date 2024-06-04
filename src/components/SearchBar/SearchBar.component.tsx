@@ -1,3 +1,4 @@
+import Arrow from '@/assets/icons/arrow.svg?react';
 import Search from '@/assets/icons/search.svg?react';
 import { Button } from '@/components/button/Button.tsx';
 
@@ -18,10 +19,21 @@ export const SearchBar = () => (
                 <span className={styles.sort__title}>Sort by:</span>
                 <div>
                     <ul className={styles.sort__list}>
-                        <li className={styles.list__item}>Price (High - Low)</li>
-                        <li className={styles.list__item}>Price (Low - High)</li>
-                        <li className={styles.list__item}>Newest</li>
-                        <li className={styles.list__item}>Oldest</li>
+                        <li className={styles.list__item}>
+                            <span className={styles.item__block}>
+                                Price (High - Low)
+                                <Arrow className={styles.arrow} />
+                            </span>
+                        </li>
+                        <li className={styles.list__item}>
+                            <span className={styles.item__block}>Price (Low - High)</span>
+                        </li>
+                        <li className={styles.list__item}>
+                            <span className={styles.item__block}>Newest</span>
+                        </li>
+                        <li className={styles.list__item}>
+                            <span className={styles.item__block}>Oldest</span>
+                        </li>
                     </ul>
                 </div>
             </div>
