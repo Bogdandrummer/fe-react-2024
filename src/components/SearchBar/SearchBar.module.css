@@ -3,28 +3,38 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: auto;
   background-color: #FFF;
   padding: 30px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1280px) {
+
+  .search__bar {
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+  }
 }
 
 .input__box {
   position: relative;
   z-index: 1;
   width: 100%;
+  height: 40px;
+  transition: all 150ms ease-in-out;
 }
 
-.search__field {
-  width: 100%;
-  height: 40px;
-  background-color: #FFF;
-  padding: 0 20px;
-  box-sizing: border-box;
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 20px;
-  color: #656565;
-  font-size: 14px;
-  font-weight: 300;
-  stroke: #1A1A1A;
+@media (min-width: 1280px) {
+
+  .input__box {
+    width: 275px;
+  }
+}
+
+.input__box:hover {
+  cursor: pointer;
 }
 
 .input__box::after {
@@ -33,7 +43,7 @@
   right: 0;
   top: 0;
   padding: 20px;
-  background-color: #D43824;
+  background-color: #EF4934;
   z-index: 2;
   height: 24px;
   width: 24px;
@@ -42,17 +52,55 @@
   background-repeat: no-repeat;
   background-position: center;
   stroke: #FFF;
+  transition: all 150ms ease-in-out;
+}
+
+.search__field {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 20px;
+  stroke: #1A1A1A;
+  transition: all 150ms ease-in-out;
+}
+
+.search__field::placeholder {
+  color: #656565;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.search__field:hover .search__field::placeholder {
+  color: #333;
+}
+
+.search__field:hover {
+  cursor: pointer;
+  background-color: #F1F1F1;
+  transition: all 150ms ease-in-out;
+}
+
+
+.search__field:hover .input__box::after {
+  background-color: #D43824;
 }
 
 .type__goods {
   display: flex;
+  margin-top: 20px;
   column-gap: 15px;
 }
 
 .search__button {
   display: flex;
+  position: relative;
+  z-index: 1;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 40px;
   padding: 10px 20px;
   font-size: 14px;
@@ -60,8 +108,32 @@
   line-height: 17px;
   color: #656565;
   background-color: #FFF;
+  border: none;
+  transition: all 100ms ease-in-out;
+}
+
+.btn__bd {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 1px solid #E1E1E1;
   border-radius: 50px;
+  transition: all 100ms ease-in-out;
+}
+
+.search__button:hover {
+  color: #FFF;
+  transition: all 100ms ease-in-out;
+}
+
+.search__button:hover .btn__bd {
+  width: 70%;
+  background-color: #EF4934;
+  overflow: visible;
+  transition: all 100ms ease-in-out;
 }
 
 .sort__filter {
